@@ -372,7 +372,7 @@ let CALLBACK_ON_REQUEST = null;
 let CALLBACK_ON_START = null;
 let CALLBACK_ON_STOP = null;
 
-class SMBServer {
+class SmbServer {
     on(onType, callback) {
         if (!callback || typeof (callback) !== 'function') throw new Error('Callback Must be a function');
 
@@ -442,6 +442,4 @@ class SMBServer {
     }
 }
 
-module.exports = {
-    SMBServer
-}
+module.exports = SmbServer;

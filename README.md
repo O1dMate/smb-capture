@@ -31,11 +31,8 @@ There are 4 callbacks that you can setup for the server (all of which are option
 ## Listening for Connections
 ```javascript
 // This is will also work
-// const smb = require('smb-capture');
-// const smbServer = new smb.SMBServer();
-
-const { SMBServer } = require('smb-capture');
-const smbServer = new SMBServer();
+const SmbServer = require('smb-capture');
+const smbServer = new SmbServer();
 
 smbServer.on('request', (data) => {
     console.log('Data:', data);
