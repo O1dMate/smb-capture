@@ -414,9 +414,17 @@ class SmbServer {
 
                 socket.on('error', (error) => {});
                 socket.on('close', (data) => {});
-            }).listen(445, '0.0.0.0', () => {
+            });
+
+            SERVER_SOCKET.listen(445, '0.0.0.0', () => {
                 if (CALLBACK_ON_START && typeof (CALLBACK_ON_START) === 'function') {
                     CALLBACK_ON_START();
+                }
+            });
+
+            SERVER_SOCKET.on('error', (err) => {
+                if (CALLBACK_ON_ERROR && typeof (CALLBACK_ON_ERROR) === 'function') {
+                    CALLBACK_ON_ERROR(err);
                 }
             });
         } catch (err) {
