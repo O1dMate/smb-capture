@@ -1,13 +1,15 @@
 {
   "name": "smb-capture",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple, lightweight modules for capturing the hash from an SMB connection. For purposes such as pen-testing where only the NetNTLMv2 hash is required. This is not a full on SMB server, it stops communicating after capturing the hash.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "dns",
+    "smb",
+    "netntlmv2",
+    "netntlmv2-hash",
     "node",
     "javascript",
     "server"
