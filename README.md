@@ -1,5 +1,5 @@
 # What is this?
-Simple, lightweight modules for capturing the hash from an SMB connection. Not an SMB server, for purposes such as pen-testing where only the NetNTLMv2 hash is required.
+Simple, lightweight modules for capturing the hash from an SMB connection. For purposes such as pen-testing where only the NetNTLMv2 hash is required. This is not a full on SMB server, it stops communicating after capturing the hash.
 
 <br>
 
