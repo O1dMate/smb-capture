@@ -403,7 +403,8 @@ class SmbServer {
                         socket.write(Buffer.from('0000010ffe534d4240000100160000c00100210001000000000000000100000000000000fffe000000000000e737204a0000000000000000000000000000000000000000090000004800c700a181c43081c1a0030a0101a10c060a2b06010401823702020aa281ab0481a84e544c4d5353500002000000100010003800000007028ae2414141414141414100000000000000006000600048000000ffffffffffffffff52005700450056004400780055004a0001001000770043005300730056006a006800610003001000770043005300730056006a00680061000200100052005700450056004400780055004a000400100052005700450056004400780055004a000700080080961f7568e6d60100000000', 'hex'));
                         currentMessage++;
                     } else if (currentMessage === 2) {
-                        let decodedDetails = decodeSessionSetupNTLMSSP_AUTH_Request(Uint8Array.from(data))
+                        let decodedDetails = decodeSessionSetupNTLMSSP_AUTH_Request(Uint8Array.from(data));
+                        decodedDetails.fromIp = socket.remoteAddress;
                         socket.destroy();
                         
                         if (CALLBACK_ON_REQUEST && typeof (CALLBACK_ON_REQUEST) === 'function') {
