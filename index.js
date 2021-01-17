@@ -194,7 +194,6 @@ const decodeResponseToken = (rawMessageData) => {
         username: User_Name.Name.toString('utf-8'),
         hostname: Host_Name.Name.toString(),
         domain: Domain_Name.Name.toString(),
-        ntlm_challenge: NTLM_Response.Challenge,
         net_ntlm_v2_hash: `${User_Name.Name}::${Domain_Name.Name}:${'4141414141414141'}:${NTLM_Response.Challenge.slice(0, 32)}:${NTLM_Response.Challenge.slice(32)}`
     }
 }
